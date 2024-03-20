@@ -2,6 +2,20 @@
 
 #include <assert.h>
 #include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+void read_input(char* message, const char* format, void* buffer) {
+    printf("%s\n> ", message);
+    if (scanf(format, buffer) == EOF) {
+        fprintf(stderr, "Could not read the input with format %s.", format);
+        exit(1);
+    }
+
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) {
+    }
+}
 
 int double_eq(double a, double b) { return fabs(a - b) < EPSILON; }
 

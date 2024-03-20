@@ -16,6 +16,12 @@ Offer* malloc_offer(int id, double surface, double price, EstateType type,
 
 void free_offer(Offer* offer);
 
+void print_offer(Offer* offer);
+
+EstateType it_estate_type(int value);
+
+char* estate_type_to_str(EstateType type);
+
 void test_domain();
 
 #endif
