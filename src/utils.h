@@ -6,7 +6,7 @@
 /**
  * Returns 1 if a and b are equal
  */
-int doublecmp(double a, double b);
+int double_eq(double a, double b);
 
 void test_utils();
 

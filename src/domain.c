@@ -2,10 +2,11 @@
 
 #include <assert.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "utils.h"
 
-Offer* malloc_offer(int id, double surface, double price, char* type,
+Offer* malloc_offer(int id, double surface, double price, EstateType type,
                     char* address) {
     Offer* offer = malloc(sizeof(Offer));
 
@@ -19,13 +20,11 @@ Offer* malloc_offer(int id, double surface, double price, char* type,
 }
 
 void test_malloc_offer() {
-    // AAA
-
     // Arrange
     int id = 1;
     double surface = 123.123;
     double price = 100000.5;
-    char* type = "teren";
+    EstateType type = LAND;
     char* address = "Cluj";
 
     // Act
@@ -33,10 +32,10 @@ void test_malloc_offer() {
 
     // Assert
     assert(actual->id == 1);
-    assert(doublecmp(actual->surface, surface));
-    assert(doublecmp(actual->price, price));
-    // assert(offer->type == "teren");
-    // assert(offer->address == "Cluj");
+    assert(double_eq(actual->surface, surface));
+    assert(double_eq(actual->price, price));
+    assert(actual->type == type);
+    assert(strcmp(actual->address, address) == 0);
 }
 
 void test_domain() { test_malloc_offer(); }
